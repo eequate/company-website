@@ -52,7 +52,7 @@ export default function FeatureGrid() {
             title: 'CEO',
             company: 'Soshable',
             testimonial: 'This product transformed our workflow efficiency.',
-            imageUrl: '/assets/images/customer1.jpeg',
+            imageUrl: '/assets/images/person1.jpeg',
             heading: 'Outstanding Experience',
             description: 'Utilizing artificial intelligence to streamline, refine, and elevate user experiences for more intelligent outcomes.',
             bgImage: "/assets/images/testimonial.png"
@@ -63,7 +63,7 @@ export default function FeatureGrid() {
             title: 'Chief Innovation Officer',
             company: 'Techroot',
             testimonial: 'An amazing experience with top-tier support!',
-            imageUrl: '/assets/images/customer2.jpeg',
+            imageUrl: '/assets/images/person2.jpeg',
             heading: 'Innovative Solutions',
             description: 'Leveraging cutting-edge technology to enhance productivity and drive success.',
             bgImage: "/assets/images/testimonial.png"
@@ -73,7 +73,7 @@ export default function FeatureGrid() {
             title: 'CTO',
             company: 'TechGenius',
             testimonial: 'User-friendly and feature-rich. Highly recommend!',
-            imageUrl: '/assets/images/customer3.jpeg',
+            imageUrl: '/assets/images/person3.jpeg',
             heading: 'Dynamic Development',
             description: 'Integrating innovative strategies to fuel growth and drive sustainable progress.',
             bgImage: "/assets/images/testimonial.png"
