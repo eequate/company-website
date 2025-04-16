@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Spline from "@splinetool/react-spline";
+
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
@@ -24,15 +24,16 @@ export default function HeroSection() {
             <div
                 className="absolute inset-0 bg-[#121212] opacity-0.5 rounded-[20px] lg:rounded-[30px] justify-center flex items-center"
                 {...(ANIMATION ? { "data-aos": "fade-in" } : {})}
+                style={{ backgroundImage: "url('/herobg.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
             >
                 <div
                     className="group relative md:w-full w-[300px] md:h-full h-[300px] md:rounded-none rounded-full overflow-hidden transition-transform duration-500 group-hover:scale-110"
                     {...(ANIMATION ? { "data-aos": "zoom-in" } : {})}
                 >
-                    <Spline
+                    {/* <Spline
                         scene="https://prod.spline.design/c0krNktqMJUdlRU2/scene.splinecode"
                         className="md:rounded-none rounded-full"
-                    />
+                    /> */}
                 </div>
             </div>
 
