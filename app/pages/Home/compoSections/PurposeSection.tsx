@@ -42,7 +42,7 @@ export default function PurposeSection() {
   return (
     <div
       className="relative mx-auto text-center rounded-[30px] lg:p-[48px] p-[20px] bg-cover"
-      style={{ backgroundImage: `url(/assets/images/nature.png)` }}
+      style={{ backgroundImage: `url(/assets/images/nature.webp)` }}
     >
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black opacity-50 rounded-[30px]"></div>
