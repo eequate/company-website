@@ -12,19 +12,19 @@ const services = [
     title: "Responsive Web Development Solutions",
     description:
       "Creating responsive and scalable websites that elevate user experiences.",
-    image: "/assets/images/shot1.svg",
+    image: "/assets/images/shot1.webp",
   },
   {
     title: "Mobile Application Development",
     description:
       "Developing apps that connect with users and drive engagement seamlessly.",
-    image: "/assets/images/shot2.svg",
+    image: "/assets/images/shot2.webp",
   },
   {
     title: "Marketing Technology Solutions",
     description:
       "Empowering campaigns with data-driven strategies for optimized results.",
-    image: "/assets/images/shot3.svg",
+    image: "/assets/images/shot3.webp",
   },
 ];
 
@@ -62,7 +62,8 @@ export default function ServicesSection() {
         className="text-center md:text-[24px] sm:text-[18px] text-[14px] md:leading-[40px] leading-[28px] font-medium mt-3 text-[#D5DAE2]"
         {...getAosProps("fade-up", 400)}
       >
-        Our comprehensive services drive growth, engagement, and efficiency for your business.
+        Our comprehensive services drive growth, engagement, and efficiency for
+        your business.
       </p>
       <div className="flex justify-center flex-wrap gap-8 mt-10">
         {services.map((service, index) => (
