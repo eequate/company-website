@@ -19,12 +19,12 @@ export default function ExperienceSection() {
   }, []);
 
   return (
-    <section className="mx-auto xl:px-[48px] px-[20px] py-[60px] w-full">
+    <section className="mx-auto xl:px-[48px] px-0 md:px-[20px] py-[60px] w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start grid-flow-dense">
         {/* Left Side Cards */}
         <div className="grid grid-cols-1 gap-6 h-full lg:order-none order-last">
           <Card
-            className="relative bg-black text-white rounded-2xl overflow-hidden bg-[url('/assets/images/future.webp')] bg-cover bg-center"
+            className="relative bg-black text-white rounded-none md:rounded-2xl overflow-hidden bg-[url('/assets/images/future.webp')] bg-cover bg-center"
             {...getAosProps("fade-up")}
           >
             <div className="absolute inset-0 bg-black/60"></div>
@@ -56,7 +56,7 @@ export default function ExperienceSection() {
           </div>
 
           <Card
-            className="relative bg-black text-white rounded-2xl overflow-hidden bg-[url('/assets/images/ai.webp')] bg-cover bg-center h-[325px] w-full max-w-full"
+            className="relative bg-black text-white rounded-none md:rounded-2xl overflow-hidden bg-[url('/assets/images/ai.webp')] bg-cover bg-center h-[325px] w-full max-w-full"
             {...getAosProps("fade-left")}
           >
             <div className="absolute inset-0 bg-black/60"></div>

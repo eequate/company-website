@@ -62,9 +62,9 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section className="container mx-auto xl:px-[48px] px-[20px] lg:py-[60px] py-[20px]">
+    <section className="container mx-auto xl:px-[48px] px-0 md:px-[20px] lg:py-[60px] py-[20px]">
       <div
-        className="mx-auto text-center rounded-[30px] lg:p-[48px] p-[20px]"
+        className="mx-auto text-center rounded-none md:rounded-[30px] lg:p-[48px] p-5 md:p-[20px]"
         style={{
           background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
         }}

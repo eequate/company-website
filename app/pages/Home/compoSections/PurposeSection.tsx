@@ -41,11 +41,11 @@ export default function PurposeSection() {
 
   return (
     <div
-      className="relative mx-auto text-center rounded-[30px] lg:p-[48px] p-[20px] bg-cover"
+      className="relative mx-auto text-center rounded-none md:rounded-[30px] lg:p-[48px] p-5 md:p-[20px] bg-cover"
       style={{ backgroundImage: `url(/assets/images/nature.webp)` }}
     >
       {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 rounded-[30px]"></div>
+      <div className="absolute inset-0 bg-black opacity-50 rounded-none md:rounded-[30px]"></div>
 
       <div className="relative">
         <h2
@@ -67,19 +67,19 @@ export default function PurposeSection() {
         <div className="flex justify-center flex-wrap gap-8 mt-10">
           {commitments.map((service, index) => (
             <div
-              className="border-[5px] border-[#77AFFF4D] rounded-[30px]"
+              className="border-[5px] border-[#77AFFF4D] rounded-none md:rounded-[30px]"
               key={index}
               {...getAosProps("fade-up", index * 200)}
             >
               <Card
-                className="relative max-w-[380px] md:h-[380px] h-[320px] bg-gradient-to-b from-black to-gray-900 border-none rounded-[30px] shadow-lg p-[20px] bg-cover overflow-hidden"
+                className="relative max-w-[380px] md:h-[380px] h-[320px] bg-gradient-to-b from-black to-gray-900 border-none rounded-none md:rounded-[30px] shadow-lg p-[20px] bg-cover overflow-hidden"
                 style={{
                   backgroundImage: `url(${service.image})`,
                   backgroundPosition: "center",
                 }}
               >
                 {/* Black Overlay */}
-                <div className="absolute inset-0 bg-black opacity-50 rounded-[30px]"></div>
+                <div className="absolute inset-0 bg-black opacity-50 rounded-none md:rounded-[30px]"></div>
 
                 <CardContent className="relative flex flex-col items-center text-center text-white h-full justify-between p-0">
                   <h3 className="text-[24px] text-[#FFFFFF] leading-[30px] font-semibold">

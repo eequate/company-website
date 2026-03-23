@@ -26,7 +26,7 @@ export default function Section2() {
   }, []);
 
   return (
-    <section className="container mx-auto xl:px-[48px] px-[20px] lg:py-[60px] py-[20px]">
+    <section className="container mx-auto xl:px-[48px] px-0 md:px-[20px] lg:py-[60px] py-[20px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-[73px] gap-10 items-start">
         {/* Left Side Text */}
         <div className="flex flex-col lg:gap-[48px] gap-[32px]">
@@ -53,7 +53,7 @@ export default function Section2() {
 
           <Card
             {...getAosProps("fade-up", 600)}
-            className="relative bg-black text-white rounded-2xl overflow-hidden bg-[url('/assets/images/bg1.webp')] bg-cover bg-center"
+            className="relative bg-black text-white rounded-none md:rounded-2xl overflow-hidden bg-[url('/assets/images/bg1.webp')] bg-cover bg-center"
           >
             {/* Black overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
@@ -82,7 +82,7 @@ export default function Section2() {
         <div className="grid grid-cols-1 gap-6 h-full">
           <Card
             {...getAosProps("fade-up", 800)}
-            className="relative bg-black text-white rounded-2xl overflow-hidden bg-[url('/assets/images/bg2.webp')] bg-cover bg-center"
+            className="relative bg-black text-white rounded-none md:rounded-2xl overflow-hidden bg-[url('/assets/images/bg2.webp')] bg-cover bg-center"
           >
             {/* Black overlay */}
             <div className="absolute inset-0 bg-black/40"></div>

@@ -22,16 +22,16 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center w-full max-w-[1344px] px-6 sm:px-12 lg:px-[48px] py-16 sm:py-20 lg:py-[60px]">
+    <section className="relative flex items-center justify-center w-full max-w-[1344px] px-0 sm:px-12 lg:px-[48px] py-16 sm:py-20 lg:py-[60px]">
       {/* Fully dynamic procedural background */}
       <div
-        className="absolute inset-0 rounded-[20px] lg:rounded-[30px] overflow-hidden"
+        className="absolute inset-0 rounded-none sm:rounded-[20px] lg:rounded-[30px] overflow-hidden"
         {...(ANIMATION ? { "data-aos": "fade-in" } : {})}
       >
         <ParticleField />
       </div>
 
-      <div className="relative z-10 text-center text-white py-4 sm:py-20 lg:py-[100px] flex flex-col gap-4 sm:gap-8 lg:gap-[48px]">
+      <div className="relative z-10 text-center text-white py-4 sm:py-20 lg:py-[100px] flex flex-col gap-4 sm:gap-8 lg:gap-[48px] px-5 sm:px-0">
         <h1
           className="text-[20px] sm:text-5xl lg:text-[72px] font-semibold leading-tight"
           {...(ANIMATION ? { "data-aos": "fade-up" } : {})}

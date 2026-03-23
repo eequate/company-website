@@ -16,7 +16,7 @@ import CTABanner from './compoSections/Banner'
 export default function HomePage() {
     return (
         <div>
-            <div className="lg:p-[48px] p-[20px]">
+            <div className="lg:p-[48px] p-0 md:p-[20px]">
                 <HeroSection />
             </div>
             {/* <SplineAnimation /> */}
@@ -32,7 +32,7 @@ export default function HomePage() {
                     paragraph="Most agencies give you developers. We give you a product-minded engineering team that cares about outcomes, not just output. From architecture decisions to pixel-perfect UIs, we bring senior-level thinking to every engagement."
                 />
             </div>
-            <div className="lg:px-[48px] p-[20px]">
+            <div className="lg:px-[48px] px-0 md:px-[20px]">
                 <ServicesSection />
             </div>
 
@@ -45,10 +45,10 @@ export default function HomePage() {
             <div>
                 <ExperienceSection />
             </div>
-            <div className="lg:px-[48px] p-[20px] lg:py-[60px] py-[40px]">
+            <div className="lg:px-[48px] px-0 md:px-[20px] lg:py-[60px] py-[40px]">
                 <PurposeSection />
             </div>
-            <div className="lg:px-[48px] p-[20px]">
+            <div className="lg:px-[48px] px-0 md:px-[20px]">
                 <TechStack />
             </div>
             <div>
