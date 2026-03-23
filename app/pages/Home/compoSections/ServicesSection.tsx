@@ -9,9 +9,9 @@ const ANIMATION = process.env.NEXT_PUBLIC_ANIMATION === "true";
 
 const services = [
   {
-    title: "Responsive Web Development Solutions",
+    title: "Web Application Development",
     description:
-      "Creating responsive and scalable websites that elevate user experiences.",
+      "Building custom web applications — from simple tools to complex platforms — for businesses and users alike.",
     image: "/assets/images/shot1.webp",
   },
   {
@@ -21,9 +21,9 @@ const services = [
     image: "/assets/images/shot2.webp",
   },
   {
-    title: "Marketing Technology Solutions",
+    title: "Marketing Technology & AI Automation Solutions",
     description:
-      "Empowering campaigns with data-driven strategies for optimized results.",
+      "Powering smarter marketing with AI-driven tools, automation, and data strategies that deliver real results.",
     image: "/assets/images/shot3.webp",
   },
 ];

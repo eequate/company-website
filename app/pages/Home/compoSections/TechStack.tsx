@@ -15,39 +15,39 @@ interface TechItem {
 }
 
 const techItems: TechItem[] = [
-  // Frontend
-  { name: "React", category: "Frontend" },
-  { name: "Next.js", category: "Frontend" },
-  { name: "Tailwind CSS", category: "Frontend" },
-  { name: "React Native", category: "Mobile" },
   // Backend
   { name: "Node.js", category: "Backend" },
   { name: "Python", category: "Backend" },
   { name: "Go", category: "Backend" },
   { name: "Laravel", category: "Backend" },
   { name: "PHP", category: "Backend" },
+  // Frontend
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "React Native", category: "Mobile" },
+  // Database & Data
   { name: "PostgreSQL", category: "Database" },
   { name: "Redis", category: "Database" },
-  { name: "MongoDB", category: "Database" },
+  { name: "DynamoDB", category: "Database" },
+  { name: "Kafka", category: "Data & Streaming" },
+  { name: "Elasticsearch", category: "Data & Streaming" },
+  { name: "ElastiCache", category: "Data & Streaming" },
+  { name: "Pinecone", category: "Vector Store" },
   // Cloud & DevOps
   { name: "AWS", category: "Cloud & DevOps" },
   { name: "Google Cloud", category: "Cloud & DevOps" },
   { name: "Docker", category: "Cloud & DevOps" },
   { name: "Kubernetes", category: "Cloud & DevOps" },
   { name: "Vercel", category: "Cloud & DevOps" },
+  // Observability
+  { name: "Prometheus", category: "Observability" },
+  { name: "Grafana", category: "Observability" },
   // AI & ML
   { name: "OpenAI", category: "AI & ML" },
   { name: "Claude AI", category: "AI & ML" },
-  { name: "ElevenLabs", category: "AI & ML" },
   { name: "LangChain", category: "AI & ML" },
-  { name: "TensorFlow", category: "AI & ML" },
   { name: "Hugging Face", category: "AI & ML" },
-  { name: "Pinecone", category: "AI & ML" },
-  { name: "Stable Diffusion", category: "AI & ML" },
-  { name: "Replicate", category: "AI & ML" },
-  { name: "Whisper", category: "AI & ML" },
-  { name: "Midjourney", category: "AI & ML" },
-  { name: "Gemini", category: "AI & ML" },
 ];
 
 export default function TechStack() {
