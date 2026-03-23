@@ -49,30 +49,32 @@ export default function ContactForm() {
         setStatus("sending");
 
         try {
-            // Web3Forms: use form_id in URL (same as access_key) – more reliable than body
-            const response = await fetch(`https://api.web3forms.com/submit/${WEB3FORMS_KEY}`, {
+            const formDataToSend = new FormData();
+            formDataToSend.append("access_key", WEB3FORMS_KEY);
+            formDataToSend.append("name", `${formData.firstName} ${formData.lastName}`.trim());
+            formDataToSend.append("email", formData.email);
+            formDataToSend.append("phone", formData.phone);
+            formDataToSend.append("subject", formData.subject || "New Contact Form Submission");
+            formDataToSend.append("message", formData.message);
+            formDataToSend.append("from_name", "Eequate Website");
+
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: `${formData.firstName} ${formData.lastName}`.trim(),
-                    email: formData.email,
-                    phone: formData.phone,
-                    subject: formData.subject || "New Contact Form Submission",
-                    message: formData.message,
-                    from_name: "Eequate Website",
-                }),
+                body: formDataToSend,
             });
 
             const result = await response.json();
 
-            if (result.success) {
+            if (response.ok && result.success) {
                 setStatus("success");
                 setFormData({ firstName: "", lastName: "", phone: "", email: "", subject: "", message: "" });
             } else {
                 setStatus("error");
+                console.error("Web3Forms error:", result?.message ?? result?.error ?? response.status);
             }
-        } catch {
+        } catch (err) {
             setStatus("error");
+            console.error("Form submit failed:", err);
         }
     };
     return (
@@ -285,7 +287,7 @@ export default function ContactForm() {
                                 <p className="text-green-400 text-[16px] font-medium">Your message has been sent successfully. We&apos;ll be in touch soon!</p>
                             )}
                             {status === "config_error" && (
-                                <p className="text-amber-400 text-[16px] font-medium">Contact form is not configured. Add <code className="text-amber-300 bg-black/30 px-1 rounded">NEXT_PUBLIC_WEB3FORMS_KEY</code> to your <code className="text-amber-300 bg-black/30 px-1 rounded">.env.local</code> and restart the dev server.</p>
+                                <p className="text-amber-400 text-[16px] font-medium">Contact form is not configured. Set <code className="text-amber-300 bg-black/30 px-1 rounded">NEXT_PUBLIC_WEB3FORMS_KEY</code> in your environment (Vercel: Project Settings → Environment Variables) and redeploy.</p>
                             )}
                             {status === "error" && (
                                 <p className="text-red-400 text-[16px] font-medium">Something went wrong. Please fill in all required fields and try again.</p>
