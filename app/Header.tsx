@@ -60,6 +60,7 @@ export default function Header() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/services", label: "Services" },
+                { href: "/case-studies", label: "Our Work" },
                 { href: "/aboutus", label: "About Us" },
               ].map((item) => (
                 <NavigationMenuItem key={item.href}>
@@ -105,6 +106,7 @@ export default function Header() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/services", label: "Services" },
+                { href: "/case-studies", label: "Our Work" },
                 { href: "/aboutus", label: "About Us" },
               ].map((item) => (
                 <NavigationMenuItem key={item.href}>

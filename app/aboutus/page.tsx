@@ -44,10 +44,12 @@ export default function FeatureGrid() {
   ];
 
   return (
-    <div>
-      <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px] pt-[30px]">
-        About Eequate
-      </h1>
+    <div className="md:px-[48px] px-0">
+      <div className="lg:px-0 lg:pb-[30px] md:px-0 sm:px-[20px] pb-[20px] px-[20px] pt-[30px]">
+        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px]">
+          About Eequate
+        </h1>
+      </div>
       {/* Our Story */}
       <div className="md:px-[48px] md:py-[60px] px-[20px] py-[20px] lg:mt-0 mt-10 flex flex-col gap-[48px]">
         <h2 className="md:text-[48px] sm:text-[32px] text-[28px] font-semibold md:leading-[62px] sm:leading-[48px] leading-[40px] text-center">

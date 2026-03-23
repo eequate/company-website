@@ -71,14 +71,16 @@ export default function ContactForm() {
         }
     };
     return (
-        <div >
-            <div className="py-[60px] md:px-[48px] px-5">
-                <div className="flex justify-center items-center  rounded-[30px]" style={{ background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)" }}>
-                    <Card className="w-full  md:p-[48px] p-5 text-white bg-transparent border-none shadow-lg rounded-2xl">
-                        <h2 className="md:text-[48px] text-[32px] font-semibold leading-[62px] text-center">Contact Us</h2>
-                        <p className="md:text-[24px] text-[18px] font-medium md:leading-[40px] leading-[32px] text-[#D5DAE2] text-center mb-6">
-                            Have a project in mind? Fill out the form below and our team will get back to you within 24 hours.
-                        </p>
+        <div className="md:px-[48px] px-0">
+            <div className="lg:px-0 lg:pb-[60px] md:px-0 sm:px-[20px] pb-[40px] px-[20px] pt-[30px]">
+                <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[30px]">
+                    Contact Us
+                </h1>
+                <p className="text-[#6F849E] text-[16px] md:text-[20px] leading-[28px] md:leading-[34px] font-medium text-center max-w-[800px] mx-auto pb-[60px]">
+                    Have a project in mind? Fill out the form below and our team will get back to you within 24 hours.
+                </p>
+                <div className="flex justify-center items-center rounded-[30px]" style={{ background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)" }}>
+                    <Card className="w-full md:p-[48px] p-5 text-white bg-transparent border-none shadow-lg rounded-2xl">
                         <div className="w-full flex flex-col gap-6">
                             <div className="flex flex-col gap-[24px]">
                                 <div className="md:flex-row flex-col flex gap-[24px] w-full">
@@ -93,7 +95,6 @@ export default function ContactForm() {
                                                 border: "none",
                                                 width: "100%",
                                                 position: "relative",
-                                                zIndex: 1,
                                             }}
                                             value={formData.firstName} onChange={handleChange}
                                             name="firstName"
@@ -125,7 +126,6 @@ export default function ContactForm() {
                                                 border: "none",
                                                 width: "100%",
                                                 position: "relative",
-                                                zIndex: 1,
                                             }}
                                             name="lastName"
                                             value={formData.lastName} onChange={handleChange}
@@ -146,20 +146,29 @@ export default function ContactForm() {
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-[24px] w-full">
-                                    <div className="flex gap-2 w-full">
-                                        <div className="flex flex-col w-full">
-                                            <PhoneInput
-                                                country={"au"} // Default country (Australia: +61)
-                                                enableSearch={true}
-                                                inputClass="!w-full !bg-transparent !border !border-[#1F2541] !text-white !rounded-full px-4 h-[56px]"
-                                                containerClass="w-full"
-                                                buttonClass="!bg-transparent"
-                                                dropdownClass="!text-black "
-                                                value={formData.phone} onChange={handlePhoneChange}
-                                            />
-
-
-                                        </div>
+                                    <div style={{ position: "relative", display: "inline-block", zIndex: 2 }} className="w-full">
+                                        <PhoneInput
+                                            country={"au"}
+                                            enableSearch={true}
+                                            inputClass="phone-input-field"
+                                            containerClass="w-full"
+                                            buttonClass="phone-input-button"
+                                            dropdownClass=""
+                                            value={formData.phone} onChange={handlePhoneChange}
+                                        />
+                                        <div
+                                            style={{
+                                                position: "absolute",
+                                                inset: 0,
+                                                padding: "1px",
+                                                borderRadius: "70px",
+                                                background: "linear-gradient(90deg, #1F2541 0%, #455491 100%)",
+                                                WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                                WebkitMaskComposite: "destination-out",
+                                                maskComposite: "exclude",
+                                                pointerEvents: "none",
+                                            }}
+                                        ></div>
                                     </div>
                                     <div style={{ position: "relative", display: "inline-block" }} className="w-full">
                                         <Input
@@ -172,7 +181,6 @@ export default function ContactForm() {
                                                 border: "none",
                                                 width: "100%",
                                                 position: "relative",
-                                                zIndex: 1,
                                             }}
                                             value={formData.email} onChange={handleChange}
                                             name="email"

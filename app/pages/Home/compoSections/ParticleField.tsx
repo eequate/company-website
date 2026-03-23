@@ -253,23 +253,18 @@ export default function ParticleField() {
         const breathe = Math.sin(t * 1.5 + p.phase) * 0.06;
         const drawOpacity = Math.max(0, Math.min(1, p.opacity + breathe));
 
-        // Glow — grayscale, darker
-        const lightness = 40 + p.hue * 0.05; // subtle variation 40-52
-        const gradient = ctx.createRadialGradient(
-          p.x, p.y, 0,
-          p.x, p.y, p.radius * 5
-        );
-        gradient.addColorStop(0, `hsla(0, 0%, ${lightness}%, ${drawOpacity * 0.25})`);
-        gradient.addColorStop(0.3, `hsla(0, 0%, ${lightness - 5}%, ${drawOpacity * 0.08})`);
-        gradient.addColorStop(1, `hsla(0, 0%, ${lightness - 10}%, 0)`);
+        // Core — grayscale octagon
+        const lightness = 40 + p.hue * 0.05;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 5, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
-        ctx.fill();
-
-        // Core — grayscale
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        const sides = 8;
+        for (let s = 0; s < sides; s++) {
+          const angle = (Math.PI * 2 * s) / sides;
+          const ox = p.x + Math.cos(angle) * p.radius;
+          const oy = p.y + Math.sin(angle) * p.radius;
+          if (s === 0) ctx.moveTo(ox, oy);
+          else ctx.lineTo(ox, oy);
+        }
+        ctx.closePath();
         ctx.fillStyle = `hsla(0, 0%, ${lightness + 10}%, ${drawOpacity * 0.8})`;
         ctx.fill();
       }
@@ -313,7 +308,7 @@ export default function ParticleField() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ pointerEvents: "auto" }}
+      style={{ pointerEvents: "auto", backgroundColor: "#101014" }}
     />
   );
 }

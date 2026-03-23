@@ -11,7 +11,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ image, title, description }: ServiceCardProps) {
     return (
         <Card
-            className="relative max-w-[380px] md:h-[380px] h-[320px] bg-gradient-to-b from-black to-gray-900 border-[5px] border-[#77AFFF4D] rounded-[30px] shadow-lg p-[20px] overflow-hidden"
+            className="relative max-w-[380px] md:h-[380px] h-[320px] bg-gradient-to-b from-black to-gray-900 border-[5px] border-[#77AFFF4D] rounded-[30px] shadow-lg p-[20px] overflow-hidden card-hover cursor-pointer"
             style={{
                 backgroundImage: `url(${image})`,
                 backgroundPosition: "center",

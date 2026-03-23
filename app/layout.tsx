@@ -76,7 +76,7 @@ export default function RootLayout({
 
       >
         <Header />
-        <div className="max-w-[1440px] mx-auto pt-[100px]">{children}</div> {/* Centered 1440px layout */}
+        <main className="max-w-[1440px] mx-auto pt-[100px]">{children}</main>
         <Footer />
       </body>
     </html>

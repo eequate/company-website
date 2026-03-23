@@ -6,6 +6,7 @@ import TypoSection from './compoSections/TypoSection'
 import ServicesSection from './compoSections/ServicesSection'
 import ExperienceSection from './compoSections/ExperienceSection'
 import PurposeSection from './compoSections/PurposeSection'
+import TechStack from './compoSections/TechStack'
 import FAQSection from './compoSections/Faq'
 import CTABanner from './compoSections/Banner'
 
@@ -27,8 +28,8 @@ export default function HomePage() {
             </div>
             <div>
                 <TypoSection
-                    heading="Crafting Tomorrow’s Digital Experiences, Today"
-                    paragraph="We are a forward-thinking digital solutions company, driven by creativity and innovation. Our mission is to empower businesses by delivering tailored strategies and intuitive designs that resonate with users. With a focus on excellence and a passion for crafting impactful experiences, we partner with you to unlock new growth opportunities and elevate your brand in a digital-first world."
+                    heading="Engineering + Product Thinking, Under One Roof"
+                    paragraph="Most agencies give you developers. We give you a product-minded engineering team that cares about outcomes, not just output. From architecture decisions to pixel-perfect UIs, we bring senior-level thinking to every engagement."
                 />
             </div>
             <div className="lg:px-[48px] p-[20px]">
@@ -37,8 +38,8 @@ export default function HomePage() {
 
             <div>
                 <TypoSection
-                    heading="Shaping the Future with Innovation and Responsibility"
-                    paragraph="“Our mission is to build impactful, user-centered digital solutions that empower businesses to thrive while making a positive difference. We envision a future where technology and sustainability go hand in hand, creating value for our clients, their users, and the world at large. Through continuous innovation and a commitment to responsible practices, we aim to lead in crafting experiences that inspire growth and foster a sustainable tomorrow.”"
+                    heading="Startups Trust Us. Agencies Partner With Us."
+                    paragraph="We've helped early-stage founders ship their first MVPs and scaled production systems for established businesses. Leading digital agencies bring us in as their engineering arm — an externally internal partnership where we deliver under their brand, on their timeline, to their standards."
                 />
             </div>
             <div>
@@ -46,6 +47,9 @@ export default function HomePage() {
             </div>
             <div className="lg:px-[48px] p-[20px] lg:py-[60px] py-[40px]">
                 <PurposeSection />
+            </div>
+            <div className="lg:px-[48px] p-[20px]">
+                <TechStack />
             </div>
             <div>
                 <FAQSection />

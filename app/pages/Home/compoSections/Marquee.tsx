@@ -16,7 +16,7 @@ export default function Marquee() {
     return (
         <div className="overflow-hidden md:py-[60px] py-[20px] flex flex-col lg:gap-[48px] gap-[24px]">
             <h1 className="font-semibold lg:text-[32px] md:text-[24px] lg:leading-[51px] leading-[24px] lg:px-0 px-10 text-center">
-                Chosen by clients delivering solutions for millions worldwide
+                Trusted by startups, agencies, and enterprises across 20+ industries
             </h1>
             <div className="relative w-full mt-6">
                 <div className="marquee">
