@@ -41,9 +41,9 @@ export default function Footer() {
                         <h3 className="font-semibold text-[#1F2541] text-[18px] leading-[22px]">Quick Links</h3>
                         <ul className="text-[#6F849E] text-[14px] leading-[17px] font-normal flex flex-col gap-4">
                             <Link href="/services" > <li>Services</li></Link>
-                            <Link href="/case-studies" > <li>Our Work</li></Link>
-                            <Link href="/aboutus" >   <li>About Us</li></Link>
-                            <Link href="/aboutus#careers"> <li>Careers</li></Link>
+                            <Link href="/our-work" > <li>Our Work</li></Link>
+                            <Link href="/about-us" >   <li>About Us</li></Link>
+                            <Link href="/about-us#careers"> <li>Careers</li></Link>
                             <Link href="/contact-us" >   <li>Contact Us</li></Link>
                         </ul>
                     </div>

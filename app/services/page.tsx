@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Explore Eequate's digital services including custom web development, mobile app development, AI-powered solutions, UX/UI design, digital marketing, and cloud solutions. Based in Sydney, Australia.",
+  alternates: { canonical: "https://eequate.com/services" },
+  openGraph: { url: "https://eequate.com/services", images: [{ url: "/assets/images/banner.webp", width: 1200, height: 630, alt: "Eequate Services" }] },
+  twitter: { card: "summary_large_image" as const, images: ["/assets/images/banner.webp"] },
 };
 import ServiceCard from "../pages/Home/compoSections/FeatureCard";
 import FAQSection from "../pages/Home/compoSections/Faq";
@@ -51,12 +54,12 @@ export default function page() {
 
   return (
     <div className="md:px-[48px] px-0">
-      <div className="lg:px-0 lg:pb-[60px] md:px-0 sm:px-[20px] pb-[40px] px-[20px] pt-[30px]">
-        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px]">
+      <div className="lg:px-0 lg:pb-[60px] pb-[40px] px-0 md:px-[20px] pt-[30px]">
+        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px] px-5 md:px-0">
           Our Services
         </h1>
         <div
-          className="mx-auto text-center rounded-[30px] lg:p-[48px] p-[20px]"
+          className="mx-auto text-center rounded-none md:rounded-[30px] lg:p-[48px] p-5 md:p-[20px]"
           style={{
             background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           }}
@@ -78,7 +81,7 @@ export default function page() {
         </div>
       </div>
       {/* Social Proof */}
-      <div className="text-center py-[60px] px-[20px] md:px-[48px]">
+      <div className="text-center py-[60px] px-5 md:px-[48px]">
         <h2 className="md:text-[48px] text-[32px] font-semibold md:leading-[62px] leading-[42px] text-[#1F2541]">
           Startups <span className="text-[#006AFF]">Trust</span> Us to Deliver
         </h2>
@@ -91,9 +94,9 @@ export default function page() {
       </div>
 
       {/* Software Consultancy */}
-      <div className="px-[20px] md:px-0 pb-[60px]">
+      <div className="px-0 md:px-0 pb-[60px]">
         <div
-          className="rounded-[30px] lg:p-[48px] p-[20px]"
+          className="rounded-none md:rounded-[30px] lg:p-[48px] p-5 md:p-[20px]"
           style={{
             background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           }}

@@ -44,12 +44,21 @@ export const metadata: Metadata = {
     title: "Eequate | Digital Solutions Agency in Sydney, Australia",
     description:
       "We specialise in crafting innovative web and mobile applications, marketing technology, AI, and cloud solutions with a strong focus on user experience.",
+    images: [
+      {
+        url: "/assets/images/banner.webp",
+        width: 1200,
+        height: 630,
+        alt: "Eequate – Digital Solutions Agency in Sydney, Australia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Eequate | Digital Solutions Agency in Sydney, Australia",
     description:
       "We specialise in crafting innovative web and mobile applications, marketing technology, AI, and cloud solutions with a strong focus on user experience.",
+    images: ["/assets/images/banner.webp"],
   },
   robots: {
     index: true,
@@ -63,6 +72,9 @@ export const metadata: Metadata = {
     },
   },
   manifest: "/site.webmanifest",
+  alternates: {
+    canonical: "https://eequate.com",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -77,12 +89,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Eequate",
+    url: "https://eequate.com",
+    logo: "https://eequate.com/favicon-32x32.png",
+    description: "Sydney-based digital solutions agency specialising in custom web development, mobile apps, AI-powered solutions, UX/UI design, and cloud services.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Sydney",
+      addressRegion: "NSW",
+      addressCountry: "AU",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/eequate",
+      "https://www.linkedin.com/company/eequate/jobs",
+    ],
+    foundingDate: "2016",
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Header />
         <main className="max-w-[1440px] mx-auto pt-[100px]">{children}</main>
         <Footer />

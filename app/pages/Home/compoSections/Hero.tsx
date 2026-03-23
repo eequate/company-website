@@ -52,7 +52,7 @@ export default function HeroSection() {
           seamless, and scalable digital products.
         </p>
         <div
-          className="w-full flex justify-center"
+          className="w-full flex justify-center mt-4 sm:mt-0"
           {...(ANIMATION
             ? { "data-aos": "fade-up", "data-aos-delay": "400" }
             : {})}

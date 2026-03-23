@@ -77,14 +77,14 @@ export default function ContactForm() {
     };
     return (
         <div className="md:px-[48px] px-0">
-            <div className="lg:px-0 lg:pb-[60px] md:px-0 sm:px-[20px] pb-[40px] px-[20px] pt-[30px]">
-                <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[30px]">
+            <div className="lg:px-0 lg:pb-[60px] pb-[40px] px-0 md:px-[20px] pt-[30px]">
+                <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[30px] px-5 md:px-0">
                     Contact Us
                 </h1>
-                <p className="text-[#6F849E] text-[16px] md:text-[20px] leading-[28px] md:leading-[34px] font-medium text-center max-w-[800px] mx-auto pb-[60px]">
+                <p className="text-[#6F849E] text-[16px] md:text-[20px] leading-[28px] md:leading-[34px] font-medium text-center max-w-[800px] mx-auto pb-[60px] px-5 md:px-0">
                     Have a project in mind? Fill out the form below and our team will get back to you within 24 hours.
                 </p>
-                <div className="flex justify-center items-center rounded-[30px]" style={{ background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)" }}>
+                <div className="flex justify-center items-center rounded-none md:rounded-[30px]" style={{ background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)" }}>
                     <Card className="w-full md:p-[48px] p-5 text-white bg-transparent border-none shadow-lg rounded-2xl">
                         <div className="w-full flex flex-col gap-6">
                             <div className="flex flex-col gap-[24px]">

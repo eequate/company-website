@@ -42,7 +42,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 <CardContent className="relative flex flex-col gap-6 p-0 z-10">
                     <Image
                         src={imageUrl}
-                        alt={name}
+                        alt={`${name}, ${title} at ${company} - testimonial profile photo`}
                         width={48}
                         height={48}
                         className="rounded-lg border border-gray-700 opacity-90 w-[48px] h-[48px]"

@@ -44,7 +44,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ imageSrc, name, title }) => {
             <div className="relative w-full h-[416px]  rounded-[30px]">
                 <Image
                     src={imageSrc}
-                    alt={name}
+                    alt={`${name} - ${title} at Eequate`}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-[30px]"

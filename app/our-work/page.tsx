@@ -65,11 +65,11 @@ export default function CaseStudiesPage() {
   return (
     <div className="md:px-[48px] px-0">
       {/* Page Title */}
-      <div className="lg:px-0 lg:pb-[60px] md:px-0 sm:px-[20px] pb-[40px] px-[20px] pt-[30px]">
-        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[30px]">
+      <div className="lg:px-0 lg:pb-[60px] pb-[40px] px-0 md:px-[20px] pt-[30px]">
+        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[30px] px-5 md:px-0">
           Our Work
         </h1>
-        <p className="text-[#6F849E] text-[16px] md:text-[20px] leading-[28px] md:leading-[34px] font-medium text-center max-w-[800px] mx-auto pb-[60px]">
+        <p className="text-[#6F849E] text-[16px] md:text-[20px] leading-[28px] md:leading-[34px] font-medium text-center max-w-[800px] mx-auto pb-[60px] px-5 md:px-0">
           Every product on this page was{" "}
           <span className="text-[#1F2541] font-semibold">conceived, designed, and engineered
           in-house</span>{" "}
@@ -79,7 +79,7 @@ export default function CaseStudiesPage() {
 
         {/* Products */}
         <div
-          className="rounded-[30px] lg:p-[48px] p-[20px]"
+          className="rounded-none md:rounded-[30px] lg:p-[48px] p-5 md:p-[20px]"
           style={{
             background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           }}
@@ -134,7 +134,7 @@ export default function CaseStudiesPage() {
       </div>
 
       {/* Agency Partnerships */}
-      <div className="text-center py-[60px] px-[20px] md:px-[48px]">
+      <div className="text-center py-[60px] px-5 md:px-[48px]">
         <h2 className="md:text-[48px] text-[32px] font-semibold md:leading-[62px] leading-[42px] text-[#1F2541]">
           We Also Build for{" "}
           <span className="text-[#006AFF]">Leading Agencies</span>

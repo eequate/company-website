@@ -3,13 +3,13 @@ import React from "react";
 import Image from "next/image";
 
 const logos = [
-    "/assets/logo1.svg",
-    "/assets/logo2.svg",
-    "/assets/logo3.svg",
-    "/assets/logo4.svg",
-    "/assets/logo5.svg",
-    "/assets/logo6.svg",
-    "/assets/logo7.svg",
+    { src: "/assets/logo1.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo2.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo3.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo4.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo5.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo6.svg", alt: "Trusted partner company logo" },
+    { src: "/assets/logo7.svg", alt: "Trusted partner company logo" },
 ];
 
 export default function Marquee() {
@@ -24,8 +24,8 @@ export default function Marquee() {
                         {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                             <Image
                                 key={index}
-                                src={logo}
-                                alt="logo"
+                                src={logo.src}
+                                alt={logo.alt}
                                 width={211} // Smaller width for mobile
                                 height={36} // Adjusted height
                                 className="h-[30px] md:h-[36px] opacity-50 mx-4 md:mx-6"

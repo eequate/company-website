@@ -45,13 +45,13 @@ export default function FeatureGrid() {
 
   return (
     <div className="md:px-[48px] px-0">
-      <div className="lg:px-0 lg:pb-[30px] md:px-0 sm:px-[20px] pb-[20px] px-[20px] pt-[30px]">
-        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px]">
+      <div className="lg:px-0 lg:pb-[30px] pb-[20px] px-0 md:px-[20px] pt-[30px]">
+        <h1 className="text-[#006AFF] md:text-[72px] text-[62px] md:leading-[90px] leading-[72px] font-semibold text-center pb-[60px] px-5 md:px-0">
           About Eequate
         </h1>
       </div>
       {/* Our Story */}
-      <div className="md:px-[48px] md:py-[60px] px-[20px] py-[20px] lg:mt-0 mt-10 flex flex-col gap-[48px]">
+      <div className="md:px-[48px] md:py-[60px] px-5 py-[20px] lg:mt-0 mt-10 flex flex-col gap-[48px]">
         <h2 className="md:text-[48px] sm:text-[32px] text-[28px] font-semibold md:leading-[62px] sm:leading-[48px] leading-[40px] text-center">
           Our <span className="text-[#006AFF]">Story</span>
         </h2>
@@ -90,9 +90,9 @@ export default function FeatureGrid() {
       </div>
 
       {/* Our Values */}
-      <div className="md:px-[48px] px-5">
+      <div className="px-0 md:px-[48px]">
         <div
-          className="my-[60px] text-center flex flex-col md:gap-[48px] gap-5 md:p-[48px] p-5 rounded-[30px]"
+          className="my-[60px] text-center flex flex-col md:gap-[48px] gap-5 md:p-[48px] p-5 rounded-none md:rounded-[30px]"
           style={{
             background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           }}
@@ -178,11 +178,11 @@ export default function FeatureGrid() {
       </div>
 
       <div
-        className="w-fullmd:py-[60px] px-[20px] py-[20px] md:px-[48px]"
+        className="w-full md:py-[60px] px-0 md:px-[48px] py-[20px]"
         id="careers"
       >
         <div
-          className="md:p-[48px] p-[20px] rounded-[30px] flex flex-col md:gap-[72px] gap-10 text-center"
+          className="md:p-[48px] p-5 rounded-none md:rounded-[30px] flex flex-col md:gap-[72px] gap-10 text-center"
           style={{
             background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           }}

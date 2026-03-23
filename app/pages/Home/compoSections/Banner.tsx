@@ -4,16 +4,16 @@ import Link from "next/link";
 
 const CTABanner = () => {
   return (
-    <div className="w-full md:py-[60px] md:px-[48px] py-[20px] px-0 md:px-[20px] mx-auto">
+    <div className="w-full md:py-[60px] md:px-[48px] py-[20px] px-[20px] mx-auto">
       <div
-        className="relative rounded-none md:rounded-[30px]"
+        className="relative rounded-[30px]"
         style={{
           background: "linear-gradient(90deg, #1F2541 0%, #000000 45.72%)",
           boxShadow: "0px 0px 100px 5px #1F254180",
         }}
       >
         <div
-          className="relative flex items-center justify-between text-white rounded-none md:rounded-[30px] overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat"
+          className="relative flex items-center justify-between text-white rounded-[30px] overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/assets/images/banner.webp')",
             backgroundSize: "700px", // Set the image width to 700px
