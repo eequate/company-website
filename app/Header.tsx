@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   const handleContactClick = () => {
-    window.location.href = "/contactus"
+    window.location.href = "/contact-us"
   };
 
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function Header() {
 
       <Button
         variant="outline"
-        className={`md:flex hidden rounded-full px-[33px] py-[13px] text-[16px] font-bold border-[1px] border-[#020407] font-[Manrope] leading-[22.4px] ${pathname === "/contactus" ? "bg-[#005EFF] text-white border-[#005EFF] hover:bg-[#005EFF] hover:text-white" : "bg-transparent text-black"
+        className={`md:flex hidden rounded-full px-[33px] py-[13px] text-[16px] font-bold border-[1px] border-[#020407] font-[Manrope] leading-[22.4px] ${pathname === "/contact-us" ? "bg-[#005EFF] text-white border-[#005EFF] hover:bg-[#005EFF] hover:text-white" : "bg-transparent text-black"
           }`}
         onClick={handleContactClick}
       >
@@ -124,7 +124,7 @@ export default function Header() {
           <div className="w-full flex justify-center p-10">
             <Button
               variant="outline"
-              className={`rounded-full w-full px-[33px] cursor-pointer py-[23px] text-[16px] font-bold border-[1px]  font-[Manrope] leading-[22.4px] ${pathname === "/contactus" ? "bg-[#005EFF] text-white  hover:bg-[#005EFF] hover:text-white" : "bg-transparent text-black"
+              className={`rounded-full w-full px-[33px] cursor-pointer py-[23px] text-[16px] font-bold border-[1px]  font-[Manrope] leading-[22.4px] ${pathname === "/contact-us" ? "bg-[#005EFF] text-white  hover:bg-[#005EFF] hover:text-white" : "bg-transparent text-black"
                 }`}
               onClick={handleContactClick}
             >

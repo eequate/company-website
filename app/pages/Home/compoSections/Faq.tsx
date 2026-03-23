@@ -56,7 +56,7 @@ export default function FAQSection() {
                 </p>
                 <div className="flex flex-col gap-[24px] md:justify-start justify-center md:items-start items-center">
                     <h2 className="text-[#1F2541] font-semibold leading-[28px] text-[16px]">Have more questions?</h2>
-                    <Link href="/contactus">
+                    <Link href="/contact-us">
                         <Button
                             variant="outline"
                             className="rounded-full px-[45px] h-[56px] py-[17px] text-[16px] max-w-max font-bold border-[1px] border-[#020407] font-[Manrope] leading-[22.4px] flex justify-center items-center"

@@ -23,23 +23,12 @@ export default function HeroSection() {
 
   return (
     <section className="relative flex items-center justify-center w-full max-w-[1344px] px-6 sm:px-12 lg:px-[48px] py-16 sm:py-20 lg:py-[60px]">
-      {/* Dark background base */}
+      {/* Fully dynamic procedural background */}
       <div
-        className="absolute inset-0 bg-[#0a0a0f] rounded-[20px] lg:rounded-[30px] overflow-hidden"
+        className="absolute inset-0 rounded-[20px] lg:rounded-[30px] overflow-hidden"
         {...(ANIMATION ? { "data-aos": "fade-in" } : {})}
       >
-        {/* Particle canvas layer */}
         <ParticleField />
-
-        {/* Frosted glass overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 30% 20%, rgba(0, 106, 255, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0, 106, 255, 0.05) 0%, transparent 50%)",
-            backdropFilter: "blur(1px)",
-          }}
-        />
       </div>
 
       <div className="relative z-10 text-center text-white py-4 sm:py-20 lg:py-[100px] flex flex-col gap-4 sm:gap-8 lg:gap-[48px]">
@@ -68,7 +57,7 @@ export default function HeroSection() {
             ? { "data-aos": "fade-up", "data-aos-delay": "400" }
             : {})}
         >
-          <Link href="/contactus">
+          <Link href="/contact-us">
             <Button
               className="h-[48px] sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
               bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg"

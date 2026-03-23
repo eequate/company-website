@@ -33,7 +33,7 @@ const CTABanner = () => {
             <h2 className="md:text-[32px] text-[20px] leading-[41px] font-semibold">
               Ready to work with us?
             </h2>
-            <Link href="/contactus">
+            <Link href="/contact-us">
               <Button
                 className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
               bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg"

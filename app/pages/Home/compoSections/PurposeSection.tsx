@@ -7,23 +7,23 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const ANIMATION = process.env.NEXT_PUBLIC_ANIMATION === "true";
 
-const services = [
+const commitments = [
   {
-    title: "Sustainable Digital Transformation",
+    title: "Green-Powered Infrastructure",
     description:
-      "Innovative digital solutions designed to enhance efficiency while minimizing environmental impact.",
+      "We host on renewable-energy-backed cloud providers and choose vendors with verified sustainability credentials.",
     image: "/assets/images/dribble1.webp",
   },
   {
-    title: "Eco-Friendly Mobile Experiences",
+    title: "Carbon Offset",
     description:
-      "Building mobile applications that prioritize usability and reduce resource consumption.",
+      "We measure our operational footprint and offset it through certified carbon reduction programmes each year.",
     image: "/assets/images/dribble2.webp",
   },
   {
-    title: "Green Marketing Solutions",
+    title: "Efficient by Design",
     description:
-      "Crafting campaigns with a focus on sustainability, reaching audiences responsibly and effectively.",
+      "Leaner code, optimised assets, and smart caching — better performance means less energy consumed per user.",
     image: "/assets/images/dribble3.webp",
   },
 ];
@@ -52,21 +52,20 @@ export default function PurposeSection() {
           className="md:text-[48px] text-[28px] md:leading-[62px] leading-[38px] font-semibold text-center text-white"
           {...getAosProps("fade-up")}
         >
-          Driven by Purpose,{" "}
-          <span className="text-[#99CF63]">Inspired by Nature</span>
+          Building Responsibly,{" "}
+          <span className="text-[#99CF63]">Running Green</span>
         </h2>
         <p
           className="text-center md:text-[24px] text-[16px] md:leading-[40px] leading-[28px] font-medium mt-3 text-[#D5DAE2]"
           {...getAosProps("fade-up", 200)}
         >
-          We believe in building a better tomorrow by embracing sustainable
-          practices today. From reducing waste to optimizing energy use, we’re
-          committed to integrating eco-conscious methods into everything we do.
-          Our innovative solutions are designed not just to serve users, but
-          also to protect our planet.
+          The tech industry has a carbon problem. We do our part by choosing
+          green-powered hosting, offsetting our emissions, and writing efficient
+          code that uses fewer resources. It won&apos;t save the world on its
+          own, but it&apos;s the right way to run a business.
         </p>
         <div className="flex justify-center flex-wrap gap-8 mt-10">
-          {services.map((service, index) => (
+          {commitments.map((service, index) => (
             <div
               className="border-[5px] border-[#77AFFF4D] rounded-[30px]"
               key={index}

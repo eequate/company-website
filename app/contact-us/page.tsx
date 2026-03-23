@@ -77,7 +77,7 @@ export default function ContactForm() {
                     <Card className="w-full  md:p-[48px] p-5 text-white bg-transparent border-none shadow-lg rounded-2xl">
                         <h2 className="md:text-[48px] text-[32px] font-semibold leading-[62px] text-center">Contact Us</h2>
                         <p className="md:text-[24px] text-[18px] font-medium md:leading-[40px] leading-[32px] text-[#D5DAE2] text-center mb-6">
-                            Have a specific inquiry? Send us an email, and we’ll get back to you promptly.
+                            Have a project in mind? Fill out the form below and our team will get back to you within 24 hours.
                         </p>
                         <div className="w-full flex flex-col gap-6">
                             <div className="flex flex-col gap-[24px]">
