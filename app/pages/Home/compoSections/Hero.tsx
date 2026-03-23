@@ -2,9 +2,11 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import ParticleField from "./ParticleField";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 
 const ANIMATION = process.env.NEXT_PUBLIC_ANIMATION === "true";
 
@@ -12,8 +14,8 @@ export default function HeroSection() {
   useEffect(() => {
     if (ANIMATION) {
       AOS.init({
-        duration: 1000, // Animation duration
-        once: true, // Ensures animations happen only once
+        duration: 1000,
+        once: true,
         easing: "ease-in-out",
       });
     }
@@ -21,24 +23,23 @@ export default function HeroSection() {
 
   return (
     <section className="relative flex items-center justify-center w-full max-w-[1344px] px-6 sm:px-12 lg:px-[48px] py-16 sm:py-20 lg:py-[60px]">
+      {/* Dark background base */}
       <div
-        className="absolute inset-0 bg-[#121212] opacity-0.5 rounded-[20px] lg:rounded-[30px] justify-center flex items-center"
+        className="absolute inset-0 bg-[#0a0a0f] rounded-[20px] lg:rounded-[30px] overflow-hidden"
         {...(ANIMATION ? { "data-aos": "fade-in" } : {})}
-        style={{
-          backgroundImage: "url('/herobg.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
       >
+        {/* Particle canvas layer */}
+        <ParticleField />
+
+        {/* Frosted glass overlay */}
         <div
-          className="group relative md:w-full w-[300px] md:h-full h-[300px] md:rounded-none rounded-full overflow-hidden transition-transform duration-500 group-hover:scale-110"
-          {...(ANIMATION ? { "data-aos": "zoom-in" } : {})}
-        >
-          {/* <Spline
-                        scene="https://prod.spline.design/c0krNktqMJUdlRU2/scene.splinecode"
-                        className="md:rounded-none rounded-full"
-                    /> */}
-        </div>
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 20%, rgba(0, 106, 255, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0, 106, 255, 0.05) 0%, transparent 50%)",
+            backdropFilter: "blur(1px)",
+          }}
+        />
       </div>
 
       <div className="relative z-10 text-center text-white py-4 sm:py-20 lg:py-[100px] flex flex-col gap-4 sm:gap-8 lg:gap-[48px]">
@@ -56,7 +57,7 @@ export default function HeroSection() {
             ? { "data-aos": "fade-up", "data-aos-delay": "200" }
             : {})}
         >
-          At eequate, we specialize in crafting innovative web and mobile
+          At Eequate, we specialize in crafting innovative web and mobile
           applications, marketing technology, AI, and cloud solutions. All with
           a strong focus on user experience. We turn your vision into intuitive,
           seamless, and scalable digital products.
@@ -67,15 +68,17 @@ export default function HeroSection() {
             ? { "data-aos": "fade-up", "data-aos-delay": "400" }
             : {})}
         >
-          <Button
-            className="h-[48px] sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
-            bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg"
-          >
-            Schedule Call
-            <span>
-              <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
-            </span>
-          </Button>
+          <Link href="/contactus">
+            <Button
+              className="h-[48px] sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
+              bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg"
+            >
+              Get in Touch
+              <span>
+                <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
+              </span>
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

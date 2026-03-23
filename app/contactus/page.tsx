@@ -12,7 +12,7 @@ import "react-phone-input-2/lib/bootstrap.css";
 import { useState } from "react";
 import CTABanner from "../pages/Home/compoSections/Banner";
 
-
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 export default function ContactForm() {
 
@@ -25,6 +25,8 @@ export default function ContactForm() {
         message: "",
     });
 
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -33,14 +35,40 @@ export default function ContactForm() {
         setFormData({ ...formData, phone: value });
     };
 
-    const handleSubmit = () => {
-        const { firstName, lastName, phone, email, subject, message } = formData;
+    const handleSubmit = async () => {
+        if (!formData.firstName || !formData.email || !formData.message) {
+            setStatus("error");
+            return;
+        }
 
-        const mailtoLink = `mailto:support@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-            `Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
-        )}`;
+        setStatus("sending");
 
-        window.location.href = mailtoLink;
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_KEY,
+                    name: `${formData.firstName} ${formData.lastName}`,
+                    email: formData.email,
+                    phone: formData.phone,
+                    subject: formData.subject || "New Contact Form Submission",
+                    message: formData.message,
+                    from_name: "Eequate Website",
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus("success");
+                setFormData({ firstName: "", lastName: "", phone: "", email: "", subject: "", message: "" });
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
     };
     return (
         <div >
@@ -121,7 +149,7 @@ export default function ContactForm() {
                                     <div className="flex gap-2 w-full">
                                         <div className="flex flex-col w-full">
                                             <PhoneInput
-                                                country={"eg"} // Default country (Egypt: +20)
+                                                country={"au"} // Default country (Australia: +61)
                                                 enableSearch={true}
                                                 inputClass="!w-full !bg-transparent !border !border-[#1F2541] !text-white !rounded-full px-4 h-[56px]"
                                                 containerClass="w-full"
@@ -228,14 +256,24 @@ export default function ContactForm() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-6 text-center w-full flex justify-center items-center">
-                            <Button onClick={handleSubmit} className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
-            bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg">
-                                Send Now
+                        <div className="mt-6 text-center w-full flex flex-col justify-center items-center gap-4">
+                            <Button
+                                onClick={handleSubmit}
+                                disabled={status === "sending"}
+                                className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold
+                                    bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition-all duration-300 shadow-lg disabled:opacity-50"
+                            >
+                                {status === "sending" ? "Sending..." : "Send Now"}
                                 <span>
                                     <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
                                 </span>
                             </Button>
+                            {status === "success" && (
+                                <p className="text-green-400 text-[16px] font-medium">Your message has been sent successfully. We&apos;ll be in touch soon!</p>
+                            )}
+                            {status === "error" && (
+                                <p className="text-red-400 text-[16px] font-medium">Something went wrong. Please fill in all required fields and try again.</p>
+                            )}
                         </div>
                     </Card>
                 </div>

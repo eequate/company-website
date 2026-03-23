@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const ANIMATION = process.env.NEXT_PUBLIC_ANIMATION === "true";
 
@@ -65,12 +66,14 @@ export default function Section2() {
                 We create interfaces that resonate with users, ensuring their
                 needs are met while considering accessibility and inclusivity.
               </p>
-              <Button className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition duration-300 ease-out shadow-lg">
-                Read More
-                <span>
-                  <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
-                </span>
-              </Button>
+              <Link href="/services">
+                <Button className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition duration-300 ease-out shadow-lg">
+                  Learn More
+                  <span>
+                    <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
+                  </span>
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -92,12 +95,14 @@ export default function Section2() {
                 Utilising cutting-edge AI technology to enhance user
                 interactions and drive business growth effectively.
               </p>
-              <Button className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition duration-300 ease-out shadow-lg">
-                Read More
-                <span>
-                  <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
-                </span>
-              </Button>
+              <Link href="/services">
+                <Button className="h-[48px] max-w-max sm:h-[56px] border-[1.5px] border-[#1F2541] flex items-center justify-between px-5 sm:px-6 py-3 sm:py-[22px] leading-[22.2px] rounded-full text-white text-base sm:text-lg font-semibold bg-gradient-to-r from-black to-[#1A1A2E] hover:from-[#1A1A2E] hover:to-black transition duration-300 ease-out shadow-lg">
+                  Learn More
+                  <span>
+                    <ArrowRight className="ml-2 w-5 sm:w-[24px] h-5 sm:h-[24px]" />
+                  </span>
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
