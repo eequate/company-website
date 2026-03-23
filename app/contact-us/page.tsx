@@ -12,7 +12,7 @@ import "react-phone-input-2/lib/bootstrap.css";
 import { useState } from "react";
 import CTABanner from "../pages/Home/compoSections/Banner";
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 
 export default function ContactForm() {
 
@@ -25,7 +25,7 @@ export default function ContactForm() {
         message: "",
     });
 
-    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "config_error">("idle");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,15 +41,20 @@ export default function ContactForm() {
             return;
         }
 
+        if (!WEB3FORMS_KEY) {
+            setStatus("config_error");
+            return;
+        }
+
         setStatus("sending");
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            // Web3Forms: use form_id in URL (same as access_key) – more reliable than body
+            const response = await fetch(`https://api.web3forms.com/submit/${WEB3FORMS_KEY}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    access_key: WEB3FORMS_KEY,
-                    name: `${formData.firstName} ${formData.lastName}`,
+                    name: `${formData.firstName} ${formData.lastName}`.trim(),
                     email: formData.email,
                     phone: formData.phone,
                     subject: formData.subject || "New Contact Form Submission",
@@ -278,6 +283,9 @@ export default function ContactForm() {
                             </Button>
                             {status === "success" && (
                                 <p className="text-green-400 text-[16px] font-medium">Your message has been sent successfully. We&apos;ll be in touch soon!</p>
+                            )}
+                            {status === "config_error" && (
+                                <p className="text-amber-400 text-[16px] font-medium">Contact form is not configured. Add <code className="text-amber-300 bg-black/30 px-1 rounded">NEXT_PUBLIC_WEB3FORMS_KEY</code> to your <code className="text-amber-300 bg-black/30 px-1 rounded">.env.local</code> and restart the dev server.</p>
                             )}
                             {status === "error" && (
                                 <p className="text-red-400 text-[16px] font-medium">Something went wrong. Please fill in all required fields and try again.</p>
